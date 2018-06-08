@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logo from '../logo.svg';
 
-export const withLoading = Component =>
-  ({ data }) =>
+export const withLoading = Component => {
+  const WithLoading = ({ data }) =>
     data
       ? <Component data={data} />
       : <img
@@ -11,3 +12,10 @@ export const withLoading = Component =>
         src={logo}
         style={{ display: 'block', margin: '0 auto' }}
       />
+
+  WithLoading.propTypes = {
+    data: PropTypes.bool
+  }
+
+  return WithLoading;
+};

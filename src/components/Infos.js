@@ -1,5 +1,5 @@
 import React from 'react';
-import { withLoading } from '../hocs/Loading';
+import { withLoading } from '../hocs/withLoading';
 
 const Infos = () => (
   <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>

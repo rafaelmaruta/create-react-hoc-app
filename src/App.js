@@ -12,7 +12,7 @@ class App extends Component {
     infoStarredListData: false
   }
 
-  async componentDidMount () {
+  componentDidMount () {
     setTimeout(() => this.setState({ infoData: true }), 1000);
     setTimeout(() => this.setState({ infoReposListData: true }), 1500);
     setTimeout(() => this.setState({ infoStarredListData: true }), 2000);
