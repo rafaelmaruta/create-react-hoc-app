@@ -1,5 +1,5 @@
 {
-  "name": "create-react-redux-app",
+  "name": "create-react-hoc-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "isomorphic-fetch": "^2.2.1"
   }
 }

@@ -1,48 +1,38 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { clickButton } from './actions';
 import './App.css';
+
+import Infos from './components/Infos';
+import ReposList from './components/ReposList';
+import StarredList from './components/StarredList';
 
 class App extends Component {
   state = {
-    inputValue: ''
+    infoData: false,
+    infoReposListData: false,
+    infoStarredListData: false
   }
 
-  inputChange = event => {
-    this.setState({
-      inputValue: event.target.value
-    })
+  async componentDidMount () {
+    setTimeout(() => this.setState({ infoData: true }), 1000);
+    setTimeout(() => this.setState({ infoReposListData: true }), 1500);
+    setTimeout(() => this.setState({ infoStarredListData: true }), 2000);
   }
 
   render() {
     const {
-      clickButton,
-      newValue
-    } = this.props;
+      infoData,
+      infoReposListData,
+      infoStarredListData
+    } = this.state;
 
     return (
-      <div className="App" style={{ paddingTop: '10px' }}>
-        <input
-          onChange={this.inputChange}
-          type='text'
-          value={this.state.inputValue}
-        />
-        <button onClick={() => clickButton(this.state.inputValue)}>
-          Click me!
-        </button>
-        <h1>{newValue}</h1>
+      <div className="App">
+        <Infos data={infoData} />
+        <ReposList data={infoReposListData} />
+        <StarredList data={infoStarredListData} />
       </div>
     );
   }
 }
 
-const mapStateToProps = store => ({
-  newValue: store.clickState.newValue
-});
-
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ clickButton }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
