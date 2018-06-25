@@ -5,7 +5,7 @@ const Infos = () => (
   <ul style={{ clear: 'both', display: 'block', listStyle: 'none' }}>
     <li>
       <img
-        alt="me"
+        alt='me'
         src='https://avatars3.githubusercontent.com/u/7636517?s=460&v=4'
         style={{ margin: '0 auto' }}
       />
