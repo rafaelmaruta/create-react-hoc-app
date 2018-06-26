@@ -9,4 +9,4 @@ const Starredist = () => (
   </ul>
 );
 
-export default withLoading(ReposList);
+export default withLoading(Starredist);
